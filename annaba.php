@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Discover DZ, une plateforme pour raconter et partager ses expériences!</title>
+    <link rel="stylesheet" type="text/css" href="styleannaba.css">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,200,1,-25"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="icones/all.css">
+    <style>
+      /* Style pour les sliders */
+    .mySwiper {
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     width: 90%;
+     max-width: 800px;
+     z-index: 1000;
+     display: none;
+     background: transparent;
+     border-radius: 10px;
+    }
+   
+    .swiper-slide {
+     background: white;
+     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    </style>
+</head>
+<body> 
+    <header>
+        <div class="mydiv">
+          <img class="magg" src="image/logo3.jpg">
+          <a href="accueil.php" style="text-decoration: none;"><h1>DISCOVER DZ</h1></a>
+        </div>
+        <nav class="navv">
+          <ul class="navbar">
+             <li><a href="explore.php" >EXPLORE</a></li> 
+             <li> <nav class="menu-container">
+              <ul class="menu">
+                  <li class="menu-item">
+                      <a href="annaba.php" id="destination">DESTINATIONS</a>
+                      <div class="submenu">
+                          <ul class="submenu-column">
+                              <li><strong>Nord</strong></li>
+                              <li><a href="#">Alger</a></li>
+                              <li><a href="#">Blida</a></li>
+                              <li><a href="#">Boumerdès</a></li>
+                              <li><a href="#">Tipaza</a></li>
+                              <li><a href="#">Tizi Ouzou</a></li>
+                              <li><a href="#">Béjaïa</a></li>
+                              <li><a href="#">Jijel</a></li>
+                              <li><a href="#">Skikda</a></li>
+                          </ul>
+                          
+                          <ul class="submenu-column">
+                              <li><strong>Est</strong></li>
+                              <li><a href="#">Constantine</a></li>
+                              <li><a href="annaba.php">Annaba</a></li>
+                              <li><a href="#">Guelma</a></li>
+                              <li><a href="#">Oum El Bouaghi</a></li>
+                              <li><a href="#">Tébessa</a></li>
+                              <li><a href="#">Souk Ahras</a></li>
+                              <li><a href="#">Khenchela</a></li>
+                              <li><a href="#">Batna</a></li>
+                          </ul>
+      
+                          <ul class="submenu-column">
+                              <li><strong>Ouest</strong></li>
+                              <li><a href="#">Oran</a></li>
+                              <li><a href="#">Tlemcen</a></li>
+                              <li><a href="#">Aïn Témouchent</a></li>
+                              <li><a href="#">Mostaganem</a></li>
+                              <li><a href="#">Relizane</a></li>
+                              <li><a href="#">Mascara</a></li>
+                              <li><a href="#">Sidi Bel Abbès</a></li>
+                              <li><a href="#">Saïda</a></li>
+                          </ul>
+      
+                          <ul class="submenu-column">
+                              <li><strong>Sud</strong></li>
+                              <li><a href="#">Adrar</a></li>
+                              <li><a href="#">Tamanrasset</a></li>
+                              <li><a href="#">Illizi</a></li>
+                              <li><a href="#">Djanet</a></li>
+                              <li><a href="#">Bordj Badji Mokhtar</a></li>
+                              <li><a href="#">Timimoun</a></li>
+                              <li><a href="#">Tindouf</a></li>
+                              <li><a href="#">In Salah</a></li>
+                          </ul>
+                      </div>
+                  </li>
+              </ul>
+          </nav>
+
+
+</li>
+             <li><a href="offre.php">OFFRE</a></li>
+             <li><a href="ajouter_votre_etablissement.php">AJOUTER VOTRE ETABLISSEMENT</a></li>
+          </ul>
+      </nav>
+      <div class="myi">
+        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f icon-btn"></i></a>
+        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram icon-btn"></i></a>
+      </div>
+  </header>
+
+
+
+<div class="imgannaba">
+
+</div>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <button class="tooltip" data-name="Localisation" onclick="getLocation()">
+      <i class="fas fa-map-marker-alt"></i>
+      <p id="position"></p>
+  </button>
+  <button class="tooltip" data-name="Hôtels" id="toggleHotelBtn">
+      <i class="fas fa-bed"></i>
+  </button>
+  <button class="tooltip" data-name="Restaurants" id="toggleRestaurantBtn">
+      <i class="fas fa-utensils"></i>
+  </button>
+  <button class="tooltip" data-name="Hôpitaux" id="toggleHospitalBtn">
+      <i class="fas fa-hospital"></i>
+  </button>
+</div>
+
+<!-- Slider Hôtels -->
+<div class="swiper mySwiper" id="hotelSlider">
+  <div class="swiper-wrapper">
+      <div class="swiper-slide">
+          <div class="container">
+              <div class="hotel-card">
+                  <div class="hotel-header">
+                      <div class="rating">
+                          <i class="fas fa-star"></i>
+                          <span>4</span>
+                      </div>
+                      <img src="image/sabri1.jpg" alt="Hôtel Sabri" class="hotel-image">
+                  </div>
+                  <div class="hotel-body">
+                      <h2 class="hotel-title">Hôtel Sabri</h2>
+                      <div class="hotel-location">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <span>WOQ8+9HX, Rte du Cap de Garde, Annaba 23000, Algérie</span>
+                      </div>
+                      <p class="hotel-description">
+                          Découvrez un havre de paix en bord de mer avec notre complexe touristique 4 étoiles. Profitez de nos chambres luxueuses, de notre spa exclusif et de notre restaurant gastronomique avec vue sur la Méditerranée.
+                      </p>
+                      <div class="hotel-features">
+                          <div class="feature">
+                              <i class="fas fa-wifi"></i>
+                              <span>Wi-Fi gratuit</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-swimming-pool"></i>
+                              <span>Piscine</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-spa"></i>
+                              <span>Spa</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-utensils"></i>
+                              <span>Restaurant</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-concierge-bell"></i>
+                              <span>Service 24/7</span>
+                          </div>
+                      </div>
+                      <div class="hotel-footer">
+                          <div class="price">
+                              12,500 DA <small>/nuit</small>
+                          </div>
+                          <button class="btnn" id="bookBtn">
+                              Réserver maintenant <i class="fas fa-arrow-right"></i>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="swiper-slide">
+          <div class="container">
+              <div class="hotel-card">
+                  <div class="hotel-header">
+                      <div class="rating">
+                          <i class="fas fa-star"></i>
+                          <span>3</span>
+                      </div>
+                      <img src="image/mountazeh.jpg" alt="Hôtel El Mountazeh" class="hotel-image">
+                  </div>
+                  <div class="hotel-body">
+                      <h2 class="hotel-title">Hôtel El Mountazeh</h2>
+                      <div class="hotel-location">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <span>Seraidi Village El Mountazah, Annaba, Annaba Province, 23015, Algérie</span>
+                      </div>
+                      <p class="hotel-description">
+                          Profitez de votre passage à Annaba pour séjourner dans Hotel El Mountazah. Après avoir profité des joies de la piscine extérieure, vous pourrez reprendre des forces au restaurant. Parmi les autres petits avantages de cet hébergement figurent une terrasse et un jardin.</p>
+                      <div class="hotel-features">
+                          <div class="feature">
+                              <i class="fas fa-wifi"></i>
+                              <span>Wi-Fi gratuit</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-swimming-pool"></i>
+                              <span>Piscine</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-spa"></i>
+                              <span>Spa</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-utensils"></i>
+                              <span>Restaurant</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-concierge-bell"></i>
+                              <span>Service 24/7</span>
+                          </div>
+                      </div>
+                      <div class="hotel-footer">
+                          <div class="price">
+                              10,000 DA <small>/nuit</small>
+                          </div>
+                          <button class="btnn" id="bookBtn">
+                              Réserver maintenant <i class="fas fa-arrow-right"></i>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="swiper-slide">
+          <div class="container">
+              <div class="hotel-card">
+                  <div class="hotel-header">
+                      <div class="rating">
+                          <i class="fas fa-star"></i>
+                          <span>5</span>
+                      </div>
+                      <img src="image/sheraton.jpg" alt="Hôtel Sheraton" class="hotel-image">
+                  </div>
+                  <div class="hotel-body">
+                      <h2 class="hotel-title">Hôtel Sheraton</h2>
+                      <div class="hotel-location">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <span>Avenue Victor Hugo, Annaba, 23000, Algérie</span>
+                      </div>
+                      <p class="hotel-description">
+                          Sheraton Annaba Hotel est un choix excellent pour un séjour à Annaba. À la piscine extérieure, vous nagerez littéralement dans le bonheur.Parmi les avantages de cet hôtel de luxe,on trouve un bar/salon,une salle de fitness et un jardin,l'idéal pour des vacances sans soucis.</p>
+                      <div class="hotel-features">
+                          <div class="feature">
+                              <i class="fas fa-wifi"></i>
+                              <span>Wi-Fi gratuit</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-swimming-pool"></i>
+                              <span>Piscine</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-spa"></i>
+                              <span>Spa</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-utensils"></i>
+                              <span>Restaurant</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-concierge-bell"></i>
+                              <span>Service 24/7</span>
+                          </div>
+                      </div>
+                      <div class="hotel-footer">
+                          <div class="price">
+                              30,000 DA <small>/nuit</small>
+                          </div>
+                          <button class="btnn" id="bookBtn">
+                              Réserver maintenant <i class="fas fa-arrow-right"></i>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<!-- Slider Restaurants -->
+<div class="swiper mySwiper" id="restaurantSlider">
+  <div class="swiper-wrapper">
+      <div class="swiper-slide">
+          <div class="container">
+              <div class="hotel-card">
+                  <div class="hotel-header">
+                      <div class="rating">
+                          <i class="fas fa-star"></i>
+                          <span>4</span>
+                      </div>
+                      <img src="image/boustane.jpg" alt="Restaurant Machaoui El Boustane" class="hotel-image">
+                  </div>
+                  <div class="hotel-body">
+                      <h2 class="hotel-title">Restaurant Machaoui El Boustane</h2>
+                      <div class="hotel-location">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <span>WQR7+3MJ, PLAGE REFES ZAHOUANE, 23000,Annaba</span>
+                      </div>
+                      <p class="hotel-description">
+                          Découvrez une cuisine méditerranéenne raffinée dans un cadre élégant. Notre restaurant vous propose des plats traditionnels revisités avec des produits frais et locaux.
+                      </p>
+                      <div class="hotel-features">
+                          <div class="feature">
+                              <i class="fas fa-utensils"></i>
+                              <span>Cuisine locale</span>
+                          </div>
+      
+                          <div class="feature">
+                              <i class="fas fa-parking"></i>
+                              <span>Parking</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-child"></i>
+                              <span>Espace enfants</span>
+                          </div>
+                      </div>
+                      <div class="hotel-footer">
+                          <div class="price">
+                              2,500 DA <small>/personne</small>
+                          </div>
+                          <button class="btnn">
+                              Réserver <i class="fas fa-arrow-right"></i>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="swiper-slide">
+          <div class="container">
+              <div class="hotel-card">
+                  <div class="hotel-header">
+                      <div class="rating">
+                          <i class="fas fa-star"></i>
+                          <span>5</span>
+                      </div>
+                      <img src="image/perlejpg.jpg" alt="Restaurant La Perle" class="hotel-image">
+                  </div>
+                  <div class="hotel-body">
+                      <h2 class="hotel-title">La Perle</h2>
+                      <div class="hotel-location">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <span>Boulevard de la Corniche, Annaba 23000, Algérie</span>
+                      </div>
+                      <p class="hotel-description">
+                          Restaurant gastronomique avec vue panoramique sur la mer. Spécialisé dans les fruits de mer et poissons frais, préparés selon les recettes traditionnelles algériennes.
+                      </p>
+                      <div class="hotel-features">
+                          <div class="feature">
+                              <i class="fas fa-fish"></i>
+                              <span>Fruits de mer</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-umbrella-beach"></i>
+                              <span>Vue mer</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-music"></i>
+                              <span>Ambiance musicale</span>
+                          </div>
+                      </div>
+                      <div class="hotel-footer">
+                          <div class="price">
+                              3,500 DA <small>/personne</small>
+                          </div>
+                          <button class="btnn">
+                              Réserver <i class="fas fa-arrow-right"></i>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<!-- Slider Hôpitaux -->
+<div class="swiper mySwiper" id="hospitalSlider">
+  <div class="swiper-wrapper">
+      <div class="swiper-slide">
+          <div class="container">
+              <div class="hotel-card">
+                  <div class="hotel-header">
+                      <div class="rating">
+                          <i class="fas fa-star"></i>
+                          <span>5</span>
+                      </div>
+                      <img src="image/CHU.png" alt="CHU Ibn Sina" class="hotel-image">
+                  </div>
+                  <div class="hotel-body">
+                      <h2 class="hotel-title">CHU Ibn Sina</h2>
+                      <div class="hotel-location">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <span>WQ28+W89, Chem. des Caroubiers, Annaba</span>
+                      </div>
+                      <p class="hotel-description">
+                          Centre hospitalier universitaire offrant des soins de qualité dans toutes les spécialités médicales. Services d'urgence disponibles 24h/24.
+                      </p>
+                      <div class="hotel-features">
+                          <div class="feature">
+                              <i class="fas fa-ambulance"></i>
+                              <span>Urgences</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-heartbeat"></i>
+                              <span>Cardiologie</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-baby"></i>
+                              <span>Pédiatrie</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-x-ray"></i>
+                              <span>Radiologie</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-clock"></i>
+                              <span>Ouvert 24/7</span>
+                          </div>
+                      </div>
+                      <div class="hotel-footer">
+                          <div class="price">
+                              Gratuit <small>/service public</small>
+                          </div>
+                          <button class="btnn">
+                              Contacter <i class="fas fa-phone-alt"></i>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="swiper-slide">
+          <div class="container">
+              <div class="hotel-card">
+                  <div class="hotel-header">
+                      <div class="rating">
+                          <i class="fas fa-star"></i>
+                          <span>4</span>
+                      </div>
+                      <img src="image/jasmins.jpg" alt="Clinique Les Jasmins" class="hotel-image">
+                  </div>
+                  <div class="hotel-body">
+                      <h2 class="hotel-title">Clinique Les Jasmins</h2>
+                      <div class="hotel-location">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <span>Clinique Les Jasmins, WQG3+G8H, Annaba</span>
+                      </div>
+                      <p class="hotel-description">
+                          Clinique privée moderne offrant des soins spécialisés avec des équipements de dernière génération. Personnel médical qualifié et accueil personnalisé.
+                      </p>
+                      <div class="hotel-features">
+                          <div class="feature">
+                              <i class="fas fa-procedures"></i>
+                              <span>Chirurgie</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-eye"></i>
+                              <span>Ophtalmologie</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-tooth"></i>
+                              <span>Dentisterie</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-parking"></i>
+                              <span>Parking privé</span>
+                          </div>
+                      </div>
+                      <div class="hotel-footer">
+                          <div class="price">
+                              Consultation: 5,000 DA
+                          </div>
+                          <button class="btnn">
+                              Contacter <i class="fas fa-phone-alt"></i>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  // Initialisation des sliders
+  document.addEventListener('DOMContentLoaded', function() {
+      // Slider Hôtels
+      var hotelSwiper = new Swiper("#hotelSlider", {
+          loop: true,
+          navigation: {
+              nextEl: "#hotelSlider .swiper-button-next",
+              prevEl: "#hotelSlider .swiper-button-prev",
+          },
+          pagination: {
+              el: "#hotelSlider .swiper-pagination",
+              clickable: true
+          }
+      });
+
+      // Slider Restaurants
+      var restaurantSwiper = new Swiper("#restaurantSlider", {
+          loop: true,
+          navigation: {
+              nextEl: "#restaurantSlider .swiper-button-next",
+              prevEl: "#restaurantSlider .swiper-button-prev",
+          },
+          pagination: {
+              el: "#restaurantSlider .swiper-pagination",
+              clickable: true
+          }
+      });
+
+      // Slider Hôpitaux
+      var hospitalSwiper = new Swiper("#hospitalSlider", {
+          loop: true,
+          navigation: {
+              nextEl: "#hospitalSlider .swiper-button-next",
+              prevEl: "#hospitalSlider .swiper-button-prev",
+          },
+          pagination: {
+              el: "#hospitalSlider .swiper-pagination",
+              clickable: true
+          }
+      });
+
+      // Gestion des boutons
+      const hotelBtn = document.getElementById("toggleHotelBtn");
+      const restaurantBtn = document.getElementById("toggleRestaurantBtn");
+      const hospitalBtn = document.getElementById("toggleHospitalBtn");
+      
+      const hotelSlider = document.getElementById("hotelSlider");
+      const restaurantSlider = document.getElementById("restaurantSlider");
+      const hospitalSlider = document.getElementById("hospitalSlider");
+
+      // Fonction pour gérer l'affichage des sliders
+      function toggleSlider(sliderToShow, slidersToHide) {
+          // Fermer tous les autres sliders
+          slidersToHide.forEach(slider => {
+              slider.style.display = "none";
+          });
+          
+          // Basculer l'affichage du slider courant
+          if (sliderToShow.style.display === "none" || sliderToShow.style.display === "") {
+              sliderToShow.style.display = "block";
+          } else {
+              sliderToShow.style.display = "none";
+          }
+      }
+
+      // Événements pour chaque bouton
+      hotelBtn.addEventListener("click", function(e) {
+          e.stopPropagation();
+          toggleSlider(hotelSlider, [restaurantSlider, hospitalSlider]);
+      });
+
+      restaurantBtn.addEventListener("click", function(e) {
+          e.stopPropagation();
+          toggleSlider(restaurantSlider, [hotelSlider, hospitalSlider]);
+      });
+
+      hospitalBtn.addEventListener("click", function(e) {
+          e.stopPropagation();
+          toggleSlider(hospitalSlider, [hotelSlider, restaurantSlider]);
+      });
+
+      // Fermer les sliders en cliquant à l'extérieur
+      document.addEventListener('click', function(e) {
+          const allSliders = [hotelSlider, restaurantSlider, hospitalSlider];
+          const allButtons = [hotelBtn, restaurantBtn, hospitalBtn];
+          
+          if (!allSliders.some(slider => slider.contains(e.target))) {
+              allSliders.forEach(slider => {
+                  slider.style.display = "none";
+              });
+          }
+      });
+
+      // Empêcher la fermeture quand on clique dans un slider
+      [hotelSlider, restaurantSlider, hospitalSlider].forEach(slider => {
+          slider.addEventListener('click', function(e) {
+              e.stopPropagation();
+          });
+      });
+  });
+
+  // Fonction de géolocalisation
+  function getLocation() {
+      if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(openGoogleMaps, showError);
+      } else {
+          alert("La géolocalisation n'est pas supportée par ce navigateur.");
+      }
+  }
+  
+  function openGoogleMaps(position) {
+      let latitude = position.coords.latitude;
+      let longitude = position.coords.longitude;
+      
+      // Générer l'URL Google Maps
+      let mapsUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
+      
+      // Rediriger directement vers Google Maps
+      window.location.href = mapsUrl;
+  }
+  
+  function showError(error) {
+      switch(error.code) {
+          case error.PERMISSION_DENIED:
+              alert("L'utilisateur a refusé la demande de géolocalisation.");
+              break;
+          case error.POSITION_UNAVAILABLE:
+              alert("Les informations de localisation ne sont pas disponibles.");
+              break;
+          case error.TIMEOUT:
+              alert("La demande de localisation a expiré.");
+              break;
+          case error.UNKNOWN_ERROR:
+              alert("Une erreur inconnue s'est produite.");
+              break;
+      }
+  }
+</script>
+
+
+ 
+
+
+
+<div class="container">
+ <div class="description">
+     <p>
+         <strong>Annaba  </strong>est une ville côtière de l’Est algérien. <br>
+          Elle est située à 600 km d’Alger et est la 3ème ville principale du pays, <br>
+          après la capitale Alger et Oran. Elle s’étend sur 1 439 km² avec 122.5 Km sur le littoral méditerranéen. <br>
+          <br>
+           Son relief est constitué principalement de: <br>
+          - Montagnes à vocation forestière : 52,16 % <br>
+          - Collines et piémonts : 25,82 %  <br>
+          - Plaines : 18,08 %  <br>
+         Ses forêts se prêtent à une activité sylvestre, surtout pour le liège et le bois d’eucalyptus. Elles couvrent près de 75 500 ha dont 15 000 ha de chêne-liège. Le potentiel agro-pédologique représente près de 58 600 ha, notamment localisé dans les plaines de la Seybouse et du Lac de Fetzara. Près de 58 % des terres cultivables se situent dans les zones de piémont (38 700 ha).
+     </p>
+ </div>
+ <div id="map"></div>
+</div>
+
+<!-- Inclure Leaflet.js -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Script pour afficher la carte -->
+<script>
+ var map = L.map('map').setView([36.90, 7.77], 12); // Coordonnées d'Annaba
+
+ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+     attribution: '&copy; OpenStreetMap contributors'
+ }).addTo(map);
+
+ L.marker([36.90, 7.77]).addTo(map)
+     .bindPopup('Annaba, Algérie')
+     .openPopup();
+</script>
+
+<section class="carnets">
+<h2>Sélection de carnets de voyage et expériences en Annaba</h2>
+<div class="carnets-container">
+    <!-- Carnet 0 -->
+    <div class="carnet">
+        <div class="carnet-img-placeholder">
+            <button class="prev" onclick="afficherImagePrecedente(0)">&#10094;</button>
+            <img src="image/lala_bouna1.jpg" alt="">
+            <img src="image/lala_bouna2.jpg" alt="">
+            <img src="image/lala_bouna3.jpg" alt="">
+            <img src="image/lala_bouna4.jpg" alt="">
+            <img src="image/lala_bouna5.jpg" alt="">
+            <button class="next" onclick="afficherImageSuivante(0)">&#10095;</button>
+        </div>
+        <div class="carnet-info">
+            <div class="badges-container">
+            <span class="badge">Annaba</span>
+            <span class="badge">Alger</span>
+            <span class="badge">Oran</span>
+           </div>
+            <h3>Nos vacances de 2024 : de la perle de l’Est à la perle de l’Ouest</h3>
+            <p class="author">par <span>Ahmed Ahmed </span></p>
+            <button onclick="ouvrirFenetre()" class="bouton">ouvrir le carnet</button>
+        </div>
+    </div>
+
+    <!-- Carnet 1 -->
+    <div class="carnet">
+        <div class="carnet-img-placeholder">
+            <button class="prev" onclick="afficherImagePrecedente(1)">&#10094;</button>
+            <img src="image/annaba_carnet.jpg" alt="">
+            <img src="image/batna_carnet.jpg" alt="">
+            <button class="next" onclick="afficherImageSuivante(1)">&#10095;</button>
+        </div>
+        <div class="carnet-info">
+            <div class="badges-container">
+            <span class="badge">Annaba</span>
+            <span class="badge">Batna</span>
+          </div>
+            <h3>Mes Beaux Souvenirs</h3>
+            <p class="author">par <span>Samira Harket</span></p>
+            <button onclick="ouvrirFenetre()" class="bouton">ouvrir le carnet</button>
+        </div>
+    </div>
+
+    <!-- Carnet 2 -->
+    <div class="carnet">
+        <div class="carnet-img-placeholder">
+            <button class="prev" onclick="afficherImagePrecedente(2)">&#10094;</button>
+            <img src="image/annaba_carnet_gare.jpg" alt="">
+            <img src="image/Bejaia_carnet.jpg" alt="">
+            <img src="image/setif_carnet.jpg" alt="">
+            <button class="next" onclick="afficherImageSuivante(2)">&#10095;</button>
+        </div>
+        <div class="carnet-info">
+            <div class="badges-container">
+            <span class="badge">Annaba</span>
+            <span class="badge">Setif</span>
+            <span class="badge">Béjaïa</span>
+            <span class="badge">Ghardaïa</span>
+            <span class="badge">Ghardaïa</span>
+        </div>
+            <h3>Road-trip 2024 : entre plages, montagnes et dunes</h3>
+            <p class="author">par <span>Bouguera_22</span></p>
+            <button onclick="ouvrirFenetre()" class="bouton">ouvrir le carnet</button>
+        </div>
+    </div>
+
+</div>
+</section>
+
+
+<!-- carte experience -------------------------------------------------------------------------- -->
+<div class="experience-card">
+<div class="experience-info">
+    <h2>Une aventure à Annaba</h2>
+    <p class="author">par <span class="author-name">Ahmed Ahmed</span></p>
+    <p class="location"><strong>Lieu :</strong> Annaba</p>
+    <p class="place"><strong>Endroit :</strong> Lala Bouna</p>
+    <p class="transport"><strong>Moyen de transport :</strong> Voiture</p>
+    <p class="description_carte">
+        "Lors de ma visite à Lala Bouna à Annaba, j’ai été émerveillé par la beauté du lieu. 
+        Entouré d’une nature luxuriante et bercé par la brise marine, j’ai immédiatement ressenti une sensation de sérénité."
+    </p>
+    <button  class="btn"> <a href="profil.php">Accéder au profil </a></button>
+</div>
+<div class="experience-gallery">
+    <div class="image-slider">
+        <button class="prev" onclick="prevImage()">&#10094;</button>
+        <img src="image/lala_bouna1.jpg" alt="Expérience à Annaba" onclick="openLightbox(0)">
+        <img src="image/lala_bouna2.jpg" alt="Expérience à Annaba" onclick="openLightbox(1)">
+        <img src="image/lala_bouna3.jpg" alt="Expérience à Annaba" onclick="openLightbox(2)">
+        <img src="image/lala_bouna4.jpg" alt="Expérience à Annaba" onclick="openLightbox(3)">
+        <img src="image/lala_bouna5.jpg" alt="Expérience à Annaba" onclick="openLightbox(4)">
+        <button class="next" onclick="nextImage()">&#10095;</button>
+    </div>
+</div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+<span class="close" onclick="closeLightbox()">&times;</span>
+<button class="lightbox-prev" onclick="lightboxPrev()">&#10094;</button>
+<img id="lightbox-img" src="">
+<button class="lightbox-next" onclick="lightboxNext()">&#10095;</button>
+</div>
+
+<!-- java pour la carte  -->
+<script>
+let index = 0;
+let images = document.querySelectorAll(".image-slider img");
+
+
+function showImage(n) {
+    if (n >= images.length) index = 0;
+    if (n < 0) index = images.length - 1;
+    images.forEach(img => img.style.display = "none");
+    images[index].style.display = "block";
+}
+
+function nextImage() { showImage(++index); }
+function prevImage() { showImage(--index); }
+document.addEventListener("DOMContentLoaded", () => showImage(index));
+
+// Lightbox
+function openLightbox(n) {
+    lightboxIndex = n;
+    document.getElementById("lightbox-img").src = images[n].src;
+    document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
+
+function lightboxNext() {
+    lightboxIndex = (lightboxIndex + 1) % images.length;
+    document.getElementById("lightbox-img").src = images[lightboxIndex].src;
+}
+
+function lightboxPrev() {
+    lightboxIndex = (lightboxIndex - 1 + images.length) % images.length;
+    document.getElementById("lightbox-img").src = images[lightboxIndex].src;
+}
+
+// Fermer la lightbox avec Échap et naviguer avec les flèches du clavier
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        closeLightbox();
+    } else if (event.key === "ArrowRight") {
+        lightboxNext();
+    } else if (event.key === "ArrowLeft") {
+        lightboxPrev();
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+let galerieContainers = document.querySelectorAll(".carnet-img-placeholder");
+
+galerieContainers.forEach(galerie => {
+    let imagesGalerie = galerie.querySelectorAll("img");
+    let indexActuel = 0;
+
+    // Afficher la première image par défaut
+    imagesGalerie[indexActuel].classList.add("active");
+
+    // Fonction pour afficher l'image suivante
+    galerie.querySelector(".next").addEventListener("click", function () {
+        imagesGalerie[indexActuel].classList.remove("active");
+        indexActuel = (indexActuel + 1) % imagesGalerie.length; // Passer à l'image suivante (boucle)
+        imagesGalerie[indexActuel].classList.add("active");
+    });
+
+    // Fonction pour afficher l'image précédente
+    galerie.querySelector(".prev").addEventListener("click", function () {
+        imagesGalerie[indexActuel].classList.remove("active");
+        indexActuel = (indexActuel - 1 + imagesGalerie.length) % imagesGalerie.length; // Revenir à l'image précédente (boucle)
+        imagesGalerie[indexActuel].classList.add("active");
+    });
+});
+});
+
+</script>
+
+
+<!-- java pour carnets  -->
+<script>
+    let indexActuels = [0, 0, 0]; // Un index pour chaque carnet
+ 
+ function afficherImage(carnetIndex, nouvelleIndex) {
+     const carnet = document.querySelectorAll('.carnet')[carnetIndex];
+     const images = carnet.querySelectorAll('img');
+ 
+     // Gérer les bornes
+     if (nouvelleIndex < 0) {
+         nouvelleIndex = images.length - 1;
+     } else if (nouvelleIndex >= images.length) {
+         nouvelleIndex = 0;
+     }
+ 
+     // Cacher toutes les images
+     images.forEach(img => img.style.display = 'none');
+ 
+     // Afficher la bonne image
+     images[nouvelleIndex].style.display = 'block';
+ 
+     // Mettre à jour l’index
+     indexActuels[carnetIndex] = nouvelleIndex;
+ }
+ 
+ function afficherImagePrecedente(carnetIndex) {
+     afficherImage(carnetIndex, indexActuels[carnetIndex] - 1);
+ }
+ 
+ function afficherImageSuivante(carnetIndex) {
+     afficherImage(carnetIndex, indexActuels[carnetIndex] + 1);
+ }
+ 
+ // Initialisation : afficher uniquement la première image de chaque carnet
+ window.onload = () => {
+     document.querySelectorAll('.carnet').forEach((carnet, index) => {
+         const images = carnet.querySelectorAll('img');
+         images.forEach((img, i) => img.style.display = i === 0 ? 'block' : 'none');
+     });
+ };
+ 
+     </script>
+     
+     
+ 
+ 
+ 
+  <!--- la fenetre modale---> 
+ 
+ 
+     <div id="fenetreExperience" class="fenetre-experiences">
+       <span class="fermer-fenetre" onclick="fermerFenetre()">&times;</span>
+       <div class="contenu-fenetre">
+         <div id="conteneur-experiences">
+           <div class="profil-utilisateur">
+             <img src="image/photo_profil.jpg" alt="Photo de profil" class="photo-profil" />
+             <div>
+               <p class="titre-carnet">Aventure en Algérie</p>
+               <p class="infos-carnet">par <strong>Ahmed Ahmed</strong> | Durée : plusieurs mois | Début : 15 Mars 2025</p>
+               <p class="description1">"Un voyage inoubliable à travers plusieurs wilayas d'Algérie, à la découverte des trésors cachés du pays."</p>
+             </div>
+           </div>
+   
+           <hr />
+   
+           <div class="carte-experience">
+             <div class="infos-experience">
+               <h2>Une aventure à Annaba</h2>
+               <p class="date"><strong>Date :</strong> 15 Mars 2025</p>
+               <p class="wilaya"><strong>Wilaya :</strong> Annaba</p>
+               <p class="lieu"><strong>Lieu :</strong> Lala Bouna</p>
+               <p class="transport"><strong>Moyen de transport :</strong> Voiture</p>
+               <p class="description_carte">"Lors de ma visite à Lala Bouna à Annaba, j’ai été émerveillé par la beauté du lieu."</p>
+             </div>
+             <div class="galerie-experience">
+               <div class="diapo-images">
+                 <button class="precedent">&#10094;</button>
+                 <img src="image/lala_bouna2.jpg" class="active" onclick="ouvrirLightbox(0, event)" />
+                 <img src="image/lala_bouna3.jpg" onclick="ouvrirLightbox(0, event)" />
+                 <button class="suivant">&#10095;</button>
+               </div>
+             </div>
+           </div>
+   
+           <hr />
+   
+           <div class="carte-experience">
+             <div class="infos-experience">
+               <h2>Une aventure à Ghardaïa</h2>
+               <p class="date"><strong>Date :</strong> 15 Mai 2025</p>
+               <p class="wilaya"><strong>Wilaya :</strong> Ghardaïa</p>
+               <p class="lieu"><strong>Lieu :</strong> Mzab</p>
+               <p class="transport"><strong>Moyen de transport :</strong> Voiture</p>
+               <p class="description_carte">"Journée inoubliable"</p>
+             </div>
+             <div class="galerie-experience">
+               <div class="diapo-images">
+                 <button class="precedent">&#10094;</button>
+                 <img src="image/ghardaia_mzab3.jpg" class="active" onclick="ouvrirLightbox(1, event)" />
+                 <img src="image/ghardaia_mzab2.jpg" onclick="ouvrirLightbox(1, event)" />
+                 <button class="suivant">&#10095;</button>
+               </div>
+             </div>
+           </div>
+           <button  class="btn"> <a href="profil.php">Accéder au profil </a></button>
+           
+         </div>
+       </div>
+     </div>
+   
+     <!-- Lightbox -->
+     <div id="lightbox">
+       <span class="fermer-lightbox" onclick="fermerLightbox()">&times;</span>
+       <button class="nav-lightbox precedent-lightbox" onclick="imagePrecedente()">&#10094;</button>
+       <img id="image-lightbox" />
+       <button class="nav-lightbox suivant-lightbox" onclick="imageSuivante()">&#10095;</button>
+     </div>
+   
+     <script>
+         // Ouverture et fermeture de la fenêtre modale
+         function ouvrirFenetre() {
+           document.getElementById('fenetreExperience').style.display = 'flex';
+         }
+       
+         function fermerFenetre() {
+           document.getElementById('fenetreExperience').style.display = 'none';
+         }
+       
+         // Carrousel d'images dans les cartes
+         document.querySelectorAll('.diapo-images').forEach((diapo) => {
+           let index = 0;
+           const images = diapo.querySelectorAll('img');
+           const precedent = diapo.querySelector('.precedent');
+           const suivant = diapo.querySelector('.suivant');
+       
+           function afficherImage(i) {
+             images.forEach((img, idx) => {
+               img.classList.toggle('active', idx === i);
+             });
+           }
+       
+           precedent.addEventListener('click', () => {
+             index = (index - 1 + images.length) % images.length;
+             afficherImage(index);
+           });
+       
+           suivant.addEventListener('click', () => {
+             index = (index + 1) % images.length;
+             afficherImage(index);
+           });
+         });
+       
+         // Lightbox
+         let imagesLightbox = [];
+         let indexLightbox = 0;
+       
+         function ouvrirLightbox(index, event) {
+   const diapoActif = event.target.closest('.diapo-images');
+   imagesLightbox = Array.from(diapoActif.querySelectorAll('img'));
+   indexLightbox = index;
+ 
+   document.getElementById('image-lightbox').src = imagesLightbox[index].src;
+   document.getElementById('lightbox').style.display = 'flex';
+ }
+       
+         function fermerLightbox() {
+           document.getElementById('lightbox').style.display = 'none';
+         }
+       
+         function imageSuivante() {
+           indexLightbox = (indexLightbox + 1) % imagesLightbox.length;
+           document.getElementById('image-lightbox').src = imagesLightbox[indexLightbox].src;
+         }
+       
+         function imagePrecedente() {
+           indexLightbox = (indexLightbox - 1 + imagesLightbox.length) % imagesLightbox.length;
+           document.getElementById('image-lightbox').src = imagesLightbox[indexLightbox].src;
+         }
+       </script>
+ 
+ 
+     
+     
+     
+     
+     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+      <footer class="footer">
+        <div class="footer-container">
+          <!-- Contact -->
+          <div class="footer-column">
+              <h3>Contactez-nous</h3>
+              <div class="footer-social">
+                <a href="https://www.facebook.com/">  <i class="fa-brands fa-facebook-f" style="color:  darkblue;"></i></a>
+                <a href="https://www.instagram.com/">  <i class="fa-brands fa-instagram"  style="color:  darkblue;"></i></a>
+                <a href="https://www.gmail.com/"> <i class="fa-solid fa-envelope"  style="color:  darkblue;"></i></a>
+          </div>
+          </div>
+  
+  
+  
+        
+            <div class="footer-section">
+              <h2>Liens utiles</h2>
+              <ul>
+                <li><a href="#">Trouver votre localisation</a></li>
+                <li><a href="offre.php">Offre</a></li>
+              </ul>
+            </div>
+        
+            <div class="footer-section">
+              <h2>À propos</h2>
+              <p>DiscoverDZ vous permet de raconter vos aventures et vous aide à les partager avec vos amis et d'autres passionnés de voyages.</p>
+            </div>
+        
+            <div class="footer-section">
+              <h2>Wilayas à découvrir</h2>
+              <ul>
+                <li><a href="alger.php">Alger</a></li>
+                <li><a href="annaba.php">Annaba</a></li>
+                <li><a href="constantine.php">Constantine</a></li>
+                <li><a href="mostaganem.php">Mostaganem</a></li>
+                <li><a href="#">...</a></li>
+    
+              </ul>
+            </div>
+          </div>
+        </footer>
+        <script src="icones/all.js"></script>
+        <script src="script1.js"></script>
+    
+      </body>
+      </html>

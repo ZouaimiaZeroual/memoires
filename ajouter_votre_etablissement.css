@@ -1,0 +1,521 @@
+/* --- Styles Généraux --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+  }
+  /* --- ------------------------------------------------------------------------------- --- */
+  
+  /* --- HEADER --- */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 10px 30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    
+    
+  }
+  
+  .mydiv {
+    display: flex;
+    align-items: center;
+   
+  }
+  
+  .mydiv img {
+    height: 50px;
+    margin-right: 15px;
+  }
+  
+  .mydiv h1 {
+    font-size: 24px;
+    color: darkblue;
+  }
+  
+  .navv .navbar {
+    list-style: none;
+    display: flex;
+  }
+  
+  .navbar li {
+    margin-right: 20px;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: darkblue;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .navbar a:hover {
+    color: #007BFF;
+  }
+  
+  
+  
+  /* Icônes du header */
+  .myi {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon-btn {
+    font-size: 20px;
+    color: darkblue;
+    margin-right: 15px;
+    cursor: pointer;
+  }
+  
+  .icon-btn:hover {
+    color: #007BFF;
+  }
+  
+    /* --- ------------------------------------------------------------------------------- --- */
+  
+  .menu-item {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .menu-item a {
+    text-decoration: none;
+    color: darkblue;
+    font-size: 16px;
+   
+    display: block;
+  }
+  
+  /* ========================= */
+  /*       SOUS-MENU          */
+  /* ========================= */
+  
+  /* Masquer la sous-liste par défaut */
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 600px;
+    flex-direction: row;
+    gap: 20px;
+    z-index: 1000;
+  }
+  
+  /* Organisation des colonnes */
+  .submenu-column {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+  }
+  
+  /* Titres des sections */
+  .submenu-column li strong {
+    display: block;
+    font-size: 16px;
+    color: #0073e6;
+    margin-bottom: 5px;
+  }
+  
+  /* Liens du sous-menu */
+  .submenu-column li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 5px 0;
+    font-size: 14px;
+  }
+  
+  .submenu-column li a:hover {
+    color: #0073e6;
+  }
+  
+  /* ========================= */
+  /*  AFFICHAGE AU SURVOL      */
+  /* ========================= */
+  
+  /* Afficher la sous-liste au survol */
+  .menu-item:hover .submenu {
+    display: flex;
+  }
+  
+  
+  
+  /* --- ------------------------------------------------------------------------------- --- */
+  
+  .div1 {
+    display: flex;
+    justify-content: space-between;
+    background:darkblue;
+    padding: 10px 30px;
+   
+  }
+  
+  .nav1, .nav2 {
+    display: flex;
+   
+  }
+  
+  .nav1 ul, .nav2 ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav1 li, .nav2 li {
+    margin-right: 20px;
+  }
+  
+  .nav1 a, .nav2 a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .nav1 a:hover, .nav2 a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  .posi a{
+    color:red;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+   
+  }
+  
+  
+  .posi{
+    background-color: white;
+    width: 300px;
+    height: 30px;
+    border: 3px solid transparent;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    font-size: 1em;
+  }
+  .posi button{
+    background-color: white;
+    width: 300px;
+    height: 30px;
+    border: 3px solid transparent;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    font-size: 1em;
+    color: red;
+  }
+
+  
+  /* --- TEXTE SUR LE SLIDER --- */
+  .container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+/* Arrière-plan flouté */
+.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(image/nature1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(8px);
+  z-index: 1;
+}
+
+/* Contenu par-dessus */
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Carte dans img  */
+.card {
+  max-width: 400px;
+  padding: 30px;
+  background: white;
+  
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.card ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #34495e;
+}
+
+.start-btn {
+  background-color: darkblue;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.start-btn:hover {
+  background-color: #2980b9;
+}
+
+.login-link {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.login-link a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+ 
+
+.content-row {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  padding: 0 50px;
+  gap: 50px;
+}
+
+/* Texte à gauche */
+.intro-text {
+  max-width: 400px;
+  color:black;
+  font-family: sans-serif;
+}
+
+.intro-text h1 {
+  font-size: 38px;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.intro-text span {
+  font-weight: bold;
+  color: darkblue;
+  font-size: 38px;
+}
+
+.intro-text p {
+  font-size: 20px;
+  color: #f0f0f0;
+}
+
+
+
+
+
+.titre {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: -30px; /* rapprocher des cartes si besoin */
+}
+
+.titre h2 {
+  font-size: 32px;
+  color:darkblue;
+  margin-bottom: 10px;
+}
+
+.titre p {
+  font-size: 18px;
+  color: #596161;
+}
+
+
+
+
+
+
+
+
+
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 60px 50px;
+  background-color: #f8f8f8;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 40px 35px;
+  max-width: 360px; /* Augmenté */
+  flex: 1;
+  min-width: 300px; /* Augmenté */
+  transition: transform 0.3s ease;
+  border-radius: 16px; /* Optionnel pour un look moderne */
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card i {
+  font-size: 40px;
+  color: #3498db;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 18px;
+  color: darkblue;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: #4e5555;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+/* --- FOOTER --- */
+
+.footer {
+  background-color:darkblue;
+  color: white;
+  padding: 30px 20px;
+  margin-top:auto;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-section {
+  width: 22%;
+  min-width: 200px;
+}
+
+.footer-section h2 {
+  color:white
+}
+.footer-social{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -10px;
+}
+.footer-social a {
+  margin: 0px 6px;
+  border-radius: 50px;
+  color: #212121;
+  background-color: white;
+  border:1px solid rgba(0,0,0,0.1);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+}
+.copyright{
+  margin-left: 530px;
+}

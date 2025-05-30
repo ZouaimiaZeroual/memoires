@@ -1,0 +1,1012 @@
+/* --- Styles Généraux --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+/* --- ------------------------------------------------------------------------------- --- */
+
+/* --- HEADER --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 10px 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mydiv {
+  display: flex;
+  align-items: center;
+}
+
+.mydiv img {
+  height: 50px;
+  margin-right: 15px;
+}
+
+.mydiv h1 {
+  font-size: 24px;
+  color: darkblue;
+}
+
+.navv .navbar {
+  list-style: none;
+  display: flex;
+}
+
+.navbar li {
+  margin-right: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: darkblue;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #007BFF;
+}
+
+/* Icônes du header */
+.myi {
+  display: flex;
+  align-items: center;
+}
+
+.icon-btn {
+  font-size: 20px;
+  color: darkblue;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  color: #007BFF;
+}
+
+  /* --- ------------------------------------------------------------------------------- --- */
+
+.menu-item {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: darkblue;
+  font-size: 18px;
+ 
+  display: block;
+}
+
+/* ========================= */
+/*       SOUS-MENU          */
+/* ========================= */
+
+/* Masquer la sous-liste par défaut */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 600px;
+  flex-direction: row;
+  gap: 20px;
+  z-index: 1000;
+}
+
+/* Organisation des colonnes */
+.submenu-column {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+}
+
+/* Titres des sections */
+.submenu-column li strong {
+  display: block;
+  font-size: 16px;
+  color: #0073e6;
+  margin-bottom: 5px;
+}
+
+/* Liens du sous-menu */
+.submenu-column li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.submenu-column li a:hover {
+  color: #0073e6;
+}
+
+/* ========================= */
+/*  AFFICHAGE AU SURVOL      */
+/* ========================= */
+
+/* Afficher la sous-liste au survol */
+.menu-item:hover .submenu {
+  display: flex;
+}
+
+
+
+
+
+
+  
+/* --------------------------------------------------------------------------------- */
+.imgannaba{
+  background-image: url(image/img6.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height:500px;
+  position: relative;
+  box-shadow: 20px 20px 10px gray;
+}  
+
+ /* --- ------------------------------------------------------------------------------- --- */
+
+
+
+.container {
+  margin-top: 30px;
+  margin-left: 85px;
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Espace entre la description et la carte */
+}
+
+.description  {
+  flex: 3;
+  background: #f8f8f8;
+  padding: 15px;
+  border-left: 4px solid #008CBA;
+  font-size: 20px;
+  line-height: 1.3;
+  color: #333;
+  margin-left: -300px;
+}
+
+#map {
+  margin-top: 10px;
+  margin-right: -100px;
+  flex: 1.5;
+  height: 200px;
+  width: 100px; /* Ajuste selon le design souhaité */
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  z-index: -1;
+}
+
+  /* --- ------------------------------------------------------------------------------- --- */
+  .carnet {
+    background-color: #fdfdfd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    height: 100%;
+  }
+  
+  .carnets .bouton {
+    background: yellow;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    align-self: center;
+    margin-top: auto; /* pousse le bouton tout en bas */
+    margin-bottom: 10px;
+ 
+  }  
+  
+  .carnet:hover {  /* effet sotir */
+    transform: scale(1.05);
+}
+ .carnet-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    background: white;
+  }
+  
+.badges-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.badge {
+  background: #0073e6;
+  color: white;
+  font-size: 12px;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+  
+  .carnets h2 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-decoration: underline;
+      margin-left: 90px;
+  }
+  
+  .carnets-container {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      
+  }
+  
+
+  
+ 
+.carnet-img-placeholder {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.carnet-img-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carnet-img-placeholder img.active {
+  opacity: 1;
+}
+
+/* Cacher les flèches par défaut */
+.carnet-img-placeholder .prev,
+.carnet-img-placeholder .next {
+  display: none;
+}
+
+/* Les afficher uniquement au survol */
+.carnet-img-placeholder:hover .prev,
+.carnet-img-placeholder:hover .next {
+  display: block;
+}
+
+
+.prev,.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.prev { left: 5px; }
+.next { right: 5px; }
+
+  .carnet-img-placeholder {
+      width: 100%;
+      height: 180px;
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 16px;
+  }
+  
+ 
+  .carnet h3 {
+      font-size: 18px;
+      margin: 10px 0;
+      color: #333;
+      text-align: center;
+     
+  }
+  
+  .carnet .author {
+      font-size: 14px;
+      color: gray;
+      text-align: center;
+  }
+  
+   .author span {
+      font-weight: bold;
+      color: #0073e6;
+  }
+  
+   /* --- ------------------------------------------------------------------------------- --- */
+
+.sidebar {
+  position: fixed;
+  left: 10px;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: #0073e6;
+  color: white;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.sidebar button:hover {   /* Quand on passe la souris sur une icône, la couleur change */
+  background: #005bb5;
+  transform: scale(1.1);
+}
+
+
+/* Tooltip (nom de l'icône) */
+.sidebar button::after {
+content: attr(data-name);  /* Utilise la valeur de data-name pour afficher le texte.*/
+position: absolute;
+left: 60px;
+background-color: rgba(0, 0, 0, 0.8);
+color: white;
+padding: 5px 10px;
+border-radius: 5px;
+font-size: 14px;
+white-space: nowrap;
+/*  Le texte est caché au départ.*/
+opacity: 0;
+transition: opacity 0.3s ease-in-out;
+pointer-events: none;
+}
+
+.sidebar button:hover::after { 
+opacity: 1;
+} 
+
+
+
+
+
+
+
+:root {
+  --primary: #0066cc;
+  --primary-dark: #004d99;
+  --secondary: #ffcc00;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --gray: #6c757d;
+  --white: #ffffff;
+  --transition: all 0.3s ease;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+}
+
+
+  /* Main Content */
+  .container {
+    max-width: 800px;
+    max-height: 600px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Hotel Card */
+.hotel-card {
+    height:500px ;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.hotel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hotel-header {
+    position: relative;
+}
+
+.rating {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--secondary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.rating i {
+    margin-right: 0.1rem;
+}
+
+.hotel-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.hotel-body {
+    padding: 1.5rem;
+}
+
+.hotel-title {
+  font-size: large;
+  margin-top: -15px;
+  color: var(--primary);
+}
+
+.hotel-location {
+  display: flex;
+  align-items: center;
+  color: var(--gray);
+
+}
+
+.hotel-location i {
+  margin-right: 2px;
+
+}
+
+.hotel-description {
+margin-top: 5px;
+}
+.hotel-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  background: var(--light);
+  padding: 0.5rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.feature i {
+  margin-right: 1rem;
+  color:var(--primary);
+}
+
+.hotel-footer {
+  margin-right: -20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.price small {
+  font-size: 1rem;
+  color: var(--gray);
+}
+
+.btnn {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: bold;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+}
+
+.btnn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.btnn i {
+  margin-left: 0.3rem;
+}
+
+
+
+
+.swiper-button-next,
+.swiper-button-prev{
+  display: none !important;
+}
+
+
+
+/* -------------------------------------------------------- ---------------------------------------- */
+.experience-card {
+  display: flex;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px;
+  align-items: center;
+  margin-left: 100px;
+  margin-bottom: 30px;
+}
+
+.experience-info {
+  flex: 2;
+}
+
+h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.experience-card .author {
+  color: gray;
+}
+
+.experience-card .author-name {
+  color: #0073e6;
+  font-weight: bold;
+}
+.transport ,.place , .location{
+  font-size: 14px;
+}
+.description_carte {
+  font-size: 14px;
+  color: #333;
+}
+
+
+
+
+.btn {
+  background: yellow;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.btn a{
+  text-decoration: none;
+}
+
+.image-slider {
+  position: relative;
+  width: 250px;
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.experience-card .prev,
+.experience-card .next {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.experience-card  .prev { left: 5px; }
+.experience-card  .next {right: 5px; }
+
+/* Afficher les flèches seulement quand l'utilisateur passe la souris sur l'image */
+.experience-card:hover .prev,
+.experience-card:hover .next {
+  display: block;
+}
+
+
+
+/* Styles pour la lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.close, .lightbox-prev, .lightbox-next {
+  position: absolute;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.close { top: 20px; right: 20px; }
+.lightbox-prev { left: 20px; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 20px; top: 50%; transform: translateY(-50%); }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#conteneur-experiences {
+  background: white;
+  width: 80%;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profil-utilisateur {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.photo-profil {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  margin: 20px 0;
+}
+
+.carte-experience {
+  display: flex;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.infos-experience {
+  flex: 2;
+}
+
+.bouton {
+  background: yellow;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+.diapo-images {
+  position: relative;
+  width: 250px;
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.diapo-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.diapo-images img.active {
+  display: block;
+}
+
+
+.diapo-images .precedent,
+.diapo-images .suivant {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.diapo-images  .precedent { left: 5px; }
+.diapo-images .suivant {right: 5px; }
+
+/* Afficher les flèches seulement quand l'utilisateur passe la souris sur l'image */
+.diapo-images:hover .precedent,
+.diapo-images:hover .suivant {
+  display: block;
+}
+.description1  {
+  flex: 3;
+  background: #f8f8f8;
+  padding: 15px;
+  border-left: 4px solid #008CBA;
+  font-size: 14px;
+  line-height: 1.3;
+  color: #333;
+
+}
+
+
+
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Très élevé */
+
+}
+
+#lightbox img {
+  
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+
+ 
+}
+
+.nav-lightbox, .fermer-lightbox {
+  position: absolute;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.fermer-lightbox { top: 20px; right: 20px; }
+.precedent-lightbox { left: 20px; top: 50%; transform: translateY(-50%); }
+.suivant-lightbox { right: 20px; top: 50%; transform: translateY(-50%); }
+
+.date, .lieu, .transport, .wilaya {
+  font-size: 14px;
+}
+
+.fenetre-experiences {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.contenu-fenetre {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-height: 90%;
+  overflow-y: auto;
+}
+
+.fermer-fenetre {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- FOOTER --- */
+
+.footer {
+  background-color:darkblue;
+  color: white;
+  padding: 30px 20px;
+  margin-top:auto;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-section {
+  width: 22%;
+  min-width: 200px;
+}
+
+.footer-section h2 {
+  color:white
+}
+.footer-social{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -10px;
+}
+.footer-social a {
+  margin: 0px 6px;
+  border-radius: 50px;
+  color: #212121;
+  background-color: white;
+  border:1px solid rgba(0,0,0,0.1);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+}
+.copyright{
+  margin-left: 530px;
+}

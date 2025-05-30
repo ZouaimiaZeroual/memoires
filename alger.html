@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Discover DZ - Alger</title>
+    <link rel="stylesheet" type="text/css" href="stylealger.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,200,1,-25" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="icones/all.css">
+    <style>
+      .mySwiper {
+       position: fixed;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+       width: 90%;
+       max-width: 800px;
+       z-index: 1000;
+       display: none;
+       background: transparent;
+       border-radius: 10px;
+      }
+     
+      .swiper-slide {
+       background: white;
+       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+    </style>
+</head>
+<body> 
+    <header>
+        <div class="mydiv">
+          <img class="magg" src="image/logo3.jpg">
+          <a href="accueil.html" style="text-decoration: none;"><h1>DISCOVER DZ</h1></a>
+        </div>
+        <nav class="navv">
+          <ul class="navbar">
+             <li><a href="explore.html">EXPLORE</a></li> 
+             <li> <nav class="menu-container">
+              <ul class="menu">
+                  <li class="menu-item">
+                      <a href="accueil.html" id="destination">DESTINATIONS</a>
+                      <div class="submenu">
+                          <ul class="submenu-column">
+                              <li><strong>Nord</strong></li>
+                              <li><a href="alger.html">Alger</a></li>
+                              <li><a href="#">Blida</a></li>
+                              <li><a href="#">Boumerdès</a></li>
+                              <li><a href="#">Tipaza</a></li>
+                              <li><a href="#">Tizi Ouzou</a></li>
+                              <li><a href="#">Béjaïa</a></li>
+                              <li><a href="#">Jijel</a></li>
+                              <li><a href="#">Skikda</a></li>
+                          </ul>
+                          
+                          <ul class="submenu-column">
+                              <li><strong>Est</strong></li>
+                              <li><a href="constantine.html">Constantine</a></li>
+                              <li><a href="annaba.html">Annaba</a></li>
+                              <li><a href="#">Guelma</a></li>
+                              <li><a href="#">Oum El Bouaghi</a></li>
+                              <li><a href="#">Tébessa</a></li>
+                              <li><a href="#">Souk Ahras</a></li>
+                              <li><a href="#">Khenchela</a></li>
+                              <li><a href="#">Batna</a></li>
+                          </ul>
+      
+                          <ul class="submenu-column">
+                              <li><strong>Ouest</strong></li>
+                              <li><a href="oran.html">Oran</a></li>
+                              <li><a href="#">Tlemcen</a></li>
+                              <li><a href="#">Aïn Témouchent</a></li>
+                              <li><a href="#">Mostaganem</a></li>
+                              <li><a href="#">Relizane</a></li>
+                              <li><a href="#">Mascara</a></li>
+                              <li><a href="#">Sidi Bel Abbès</a></li>
+                              <li><a href="#">Saïda</a></li>
+                          </ul>
+      
+                          <ul class="submenu-column">
+                              <li><strong>Sud</strong></li>
+                              <li><a href="#">Adrar</a></li>
+                              <li><a href="#">Tamanrasset</a></li>
+                              <li><a href="#">Illizi</a></li>
+                              <li><a href="#">Djanet</a></li>
+                              <li><a href="#">Bordj Badji Mokhtar</a></li>
+                              <li><a href="#">Timimoun</a></li>
+                              <li><a href="#">Tindouf</a></li>
+                              <li><a href="#">In Salah</a></li>
+                          </ul>
+                      </div>
+                  </li>
+              </ul>
+          </nav>
+</li>
+             <li><a href="offre.html">OFFRE</a></li>
+             <li><a href="ajouter_votre_etablissement.html">AJOUTER VOTRE ETABLISSEMENT</a></li>
+          </ul>
+      </nav>
+      <div class="myi">
+        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f icon-btn"></i></a>
+        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram icon-btn"></i></a>
+      </div>
+  </header>
+
+<div class="imgalger"></div>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <button class="tooltip" data-name="Localisation" onclick="getLocation()">
+      <i class="fas fa-map-marker-alt"></i>
+      <p id="position"></p>
+  </button>
+  <button class="tooltip" data-name="Hôtels" id="toggleHotelBtn">
+      <i class="fas fa-bed"></i>
+  </button>
+  <button class="tooltip" data-name="Restaurants" id="toggleRestaurantBtn">
+      <i class="fas fa-utensils"></i>
+  </button>
+  <button class="tooltip" data-name="Hôpitaux" id="toggleHospitalBtn">
+      <i class="fas fa-hospital"></i>
+  </button>
+</div>
+
+<!-- Slider Hôtels -->
+<div class="swiper mySwiper" id="hotelSlider">
+  <div class="swiper-wrapper">
+      <div class="swiper-slide">
+          <div class="container">
+              <div class="hotel-card">
+                  <div class="hotel-header">
+                      <div class="rating">
+                          <i class="fas fa-star"></i>
+                          <span>5</span>
+                      </div>
+                      <img src="image/el_aurassi.jpg" alt="Hôtel El Aurassi" class="hotel-image">
+                  </div>
+                  <div class="hotel-body">
+                      <h2 class="hotel-title">Hôtel El Aurassi</h2>
+                      <div class="hotel-location">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <span>Rue de la Liberté, Alger Centre, Algérie</span>
+                      </div>
+                      <p class="hotel-description">
+                          Hôtel 5 étoiles offrant une vue imprenable sur la baie d'Alger. Avec ses chambres luxueuses, son spa haut de gamme et ses restaurants gastronomiques, c'est l'adresse parfaite pour un séjour mémorable.
+                      </p>
+                      <div class="hotel-features">
+                          <div class="feature">
+                              <i class="fas fa-wifi"></i>
+                              <span>Wi-Fi gratuit</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-swimming-pool"></i>
+                              <span>Piscine</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-spa"></i>
+                              <span>Spa</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-utensils"></i>
+                              <span>Restaurant</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-concierge-bell"></i>
+                              <span>Service 24/7</span>
+                          </div>
+                      </div>
+                      <div class="hotel-footer">
+                          <div class="price">
+                              25,000 DA <small>/nuit</small>
+                          </div>
+                          <button class="btnn" id="bookBtn">
+                              Réserver maintenant <i class="fas fa-arrow-right"></i>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="swiper-slide">
+          <div class="container">
+              <div class="hotel-card">
+                  <div class="hotel-header">
+                      <div class="rating">
+                          <i class="fas fa-star"></i>
+                          <span>4</span>
+                      </div>
+                      <img src="image/sheraton_alger.jpg" alt="Hôtel Sheraton Club des Pins" class="hotel-image">
+                  </div>
+                  <div class="hotel-body">
+                      <h2 class="hotel-title">Sheraton Club des Pins</h2>
+                      <div class="hotel-location">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <span>Boulevard des Martyrs, Alger, Algérie</span>
+                      </div>
+                      <p class="hotel-description">
+                          Situé dans un cadre idyllique en bord de mer, cet hôtel 4 étoiles offre des chambres spacieuses, une plage privée et plusieurs piscines. Parfait pour les vacances en famille ou les voyages d'affaires.
+                      </p>
+                      <div class="hotel-features">
+                          <div class="feature">
+                              <i class="fas fa-wifi"></i>
+                              <span>Wi-Fi gratuit</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-swimming-pool"></i>
+                              <span>Piscine</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-spa"></i>
+                              <span>Spa</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-utensils"></i>
+                              <span>Restaurant</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-concierge-bell"></i>
+                              <span>Service 24/7</span>
+                          </div>
+                      </div>
+                      <div class="hotel-footer">
+                          <div class="price">
+                              18,000 DA <small>/nuit</small>
+                          </div>
+                          <button class="btnn" id="bookBtn">
+                              Réserver maintenant <i class="fas fa-arrow-right"></i>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<!-- Slider Restaurants -->
+<div class="swiper mySwiper" id="restaurantSlider">
+  <div class="swiper-wrapper">
+      <div class="swiper-slide">
+          <div class="container">
+              <div class="hotel-card">
+                  <div class="hotel-header">
+                      <div class="rating">
+                          <i class="fas fa-star"></i>
+                          <span>4</span>
+                      </div>
+                      <img src="image/resto_el_bahdja.jpg" alt="Restaurant El Bahdja" class="hotel-image">
+                  </div>
+                  <div class="hotel-body">
+                      <h2 class="hotel-title">Restaurant El Bahdja</h2>
+                      <div class="hotel-location">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <span>Rue Didouche Mourad, Alger Centre, Algérie</span>
+                      </div>
+                      <p class="hotel-description">
+                          Restaurant traditionnel proposant une cuisine algérienne authentique dans un cadre élégant. Spécialités locales préparées avec des produits frais et des recettes ancestrales.
+                      </p>
+                      <div class="hotel-features">
+                          <div class="feature">
+                              <i class="fas fa-utensils"></i>
+                              <span>Cuisine locale</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-parking"></i>
+                              <span>Parking</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-child"></i>
+                              <span>Espace enfants</span>
+                          </div>
+                      </div>
+                      <div class="hotel-footer">
+                          <div class="price">
+                              3,000 DA <small>/personne</small>
+                          </div>
+                          <button class="btnn">
+                              Réserver <i class="fas fa-arrow-right"></i>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="swiper-slide">
+          <div class="container">
+              <div class="hotel-card">
+                  <div class="hotel-header">
+                      <div class="rating">
+                          <i class="fas fa-star"></i>
+                          <span>5</span>
+                      </div>
+                      <img src="image/resto_la_perle.jpg" alt="Restaurant La Perle Noire" class="hotel-image">
+                  </div>
+                  <div class="hotel-body">
+                      <h2 class="hotel-title">La Perle Noire</h2>
+                      <div class="hotel-location">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <span>Bordj El Kiffan, Alger, Algérie</span>
+                      </div>
+                      <p class="hotel-description">
+                          Restaurant gastronomique spécialisé dans les fruits de mer avec une vue panoramique sur la Méditerranée. Cadre romantique idéal pour les dîners spéciaux.
+                      </p>
+                      <div class="hotel-features">
+                          <div class="feature">
+                              <i class="fas fa-fish"></i>
+                              <span>Fruits de mer</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-umbrella-beach"></i>
+                              <span>Vue mer</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-music"></i>
+                              <span>Ambiance musicale</span>
+                          </div>
+                      </div>
+                      <div class="hotel-footer">
+                          <div class="price">
+                              4,500 DA <small>/personne</small>
+                          </div>
+                          <button class="btnn">
+                              Réserver <i class="fas fa-arrow-right"></i>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<!-- Slider Hôpitaux -->
+<div class="swiper mySwiper" id="hospitalSlider">
+  <div class="swiper-wrapper">
+      <div class="swiper-slide">
+          <div class="container">
+              <div class="hotel-card">
+                  <div class="hotel-header">
+                      <div class="rating">
+                          <i class="fas fa-star"></i>
+                          <span>5</span>
+                      </div>
+                      <img src="image/chu_alger.jpg" alt="CHU Mustapha Pacha" class="hotel-image">
+                  </div>
+                  <div class="hotel-body">
+                      <h2 class="hotel-title">CHU Mustapha Pacha</h2>
+                      <div class="hotel-location">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <span>Rue des Frères Ouadek, Alger, Algérie</span>
+                      </div>
+                      <p class="hotel-description">
+                          Centre hospitalo-universitaire de référence offrant des soins spécialisés dans toutes les disciplines médicales. Services d'urgence disponibles 24h/24.
+                      </p>
+                      <div class="hotel-features">
+                          <div class="feature">
+                              <i class="fas fa-ambulance"></i>
+                              <span>Urgences</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-heartbeat"></i>
+                              <span>Cardiologie</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-baby"></i>
+                              <span>Pédiatrie</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-x-ray"></i>
+                              <span>Radiologie</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-clock"></i>
+                              <span>Ouvert 24/7</span>
+                          </div>
+                      </div>
+                      <div class="hotel-footer">
+                          <div class="price">
+                              Gratuit <small>/service public</small>
+                          </div>
+                          <button class="btnn">
+                              Contacter <i class="fas fa-phone-alt"></i>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="swiper-slide">
+          <div class="container">
+              <div class="hotel-card">
+                  <div class="hotel-header">
+                      <div class="rating">
+                          <i class="fas fa-star"></i>
+                          <span>4</span>
+                      </div>
+                      <img src="image/clinic_el_biar.jpg" alt="Clinique El Biar" class="hotel-image">
+                  </div>
+                  <div class="hotel-body">
+                      <h2 class="hotel-title">Clinique El Biar</h2>
+                      <div class="hotel-location">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <span>Rue Mohamed Belouizdad, El Biar, Algérie</span>
+                      </div>
+                      <p class="hotel-description">
+                          Clinique privée moderne offrant des soins spécialisés avec des équipements de dernière génération. Personnel médical qualifié et accueil personnalisé.
+                      </p>
+                      <div class="hotel-features">
+                          <div class="feature">
+                              <i class="fas fa-procedures"></i>
+                              <span>Chirurgie</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-eye"></i>
+                              <span>Ophtalmologie</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-tooth"></i>
+                              <span>Dentisterie</span>
+                          </div>
+                          <div class="feature">
+                              <i class="fas fa-parking"></i>
+                              <span>Parking privé</span>
+                          </div>
+                      </div>
+                      <div class="hotel-footer">
+                          <div class="price">
+                              Consultation: 6,000 DA
+                          </div>
+                          <button class="btnn">
+                              Contacter <i class="fas fa-phone-alt"></i>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  // Initialisation des sliders
+  document.addEventListener('DOMContentLoaded', function() {
+      // Slider Hôtels
+      var hotelSwiper = new Swiper("#hotelSlider", {
+          loop: true,
+          navigation: {
+              nextEl: "#hotelSlider .swiper-button-next",
+              prevEl: "#hotelSlider .swiper-button-prev",
+          },
+          pagination: {
+              el: "#hotelSlider .swiper-pagination",
+              clickable: true
+          }
+      });
+
+      // Slider Restaurants
+      var restaurantSwiper = new Swiper("#restaurantSlider", {
+          loop: true,
+          navigation: {
+              nextEl: "#restaurantSlider .swiper-button-next",
+              prevEl: "#restaurantSlider .swiper-button-prev",
+          },
+          pagination: {
+              el: "#restaurantSlider .swiper-pagination",
+              clickable: true
+          }
+      });
+
+      // Slider Hôpitaux
+      var hospitalSwiper = new Swiper("#hospitalSlider", {
+          loop: true,
+          navigation: {
+              nextEl: "#hospitalSlider .swiper-button-next",
+              prevEl: "#hospitalSlider .swiper-button-prev",
+          },
+          pagination: {
+              el: "#hospitalSlider .swiper-pagination",
+              clickable: true
+          }
+      });
+
+      // Gestion des boutons
+      const hotelBtn = document.getElementById("toggleHotelBtn");
+      const restaurantBtn = document.getElementById("toggleRestaurantBtn");
+      const hospitalBtn = document.getElementById("toggleHospitalBtn");
+      
+      const hotelSlider = document.getElementById("hotelSlider");
+      const restaurantSlider = document.getElementById("restaurantSlider");
+      const hospitalSlider = document.getElementById("hospitalSlider");
+
+      // Fonction pour gérer l'affichage des sliders
+      function toggleSlider(sliderToShow, slidersToHide) {
+          // Fermer tous les autres sliders
+          slidersToHide.forEach(slider => {
+              slider.style.display = "none";
+          });
+          
+          // Basculer l'affichage du slider courant
+          if (sliderToShow.style.display === "none" || sliderToShow.style.display === "") {
+              sliderToShow.style.display = "block";
+          } else {
+              sliderToShow.style.display = "none";
+          }
+      }
+
+      // Événements pour chaque bouton
+      hotelBtn.addEventListener("click", function(e) {
+          e.stopPropagation();
+          toggleSlider(hotelSlider, [restaurantSlider, hospitalSlider]);
+      });
+
+      restaurantBtn.addEventListener("click", function(e) {
+          e.stopPropagation();
+          toggleSlider(restaurantSlider, [hotelSlider, hospitalSlider]);
+      });
+
+      hospitalBtn.addEventListener("click", function(e) {
+          e.stopPropagation();
+          toggleSlider(hospitalSlider, [hotelSlider, restaurantSlider]);
+      });
+
+      // Fermer les sliders en cliquant à l'extérieur
+      document.addEventListener('click', function(e) {
+          const allSliders = [hotelSlider, restaurantSlider, hospitalSlider];
+          const allButtons = [hotelBtn, restaurantBtn, hospitalBtn];
+          
+          if (!allSliders.some(slider => slider.contains(e.target))) {
+              allSliders.forEach(slider => {
+                  slider.style.display = "none";
+              });
+          }
+      });
+
+      // Empêcher la fermeture quand on clique dans un slider
+      [hotelSlider, restaurantSlider, hospitalSlider].forEach(slider => {
+          slider.addEventListener('click', function(e) {
+              e.stopPropagation();
+          });
+      });
+  });
+
+  // Fonction de géolocalisation
+  function getLocation() {
+      if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(openGoogleMaps, showError);
+      } else {
+          alert("La géolocalisation n'est pas supportée par ce navigateur.");
+      }
+  }
+  
+  function openGoogleMaps(position) {
+      let latitude = position.coords.latitude;
+      let longitude = position.coords.longitude;
+      
+      // Générer l'URL Google Maps
+      let mapsUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
+      
+      // Rediriger directement vers Google Maps
+      window.location.href = mapsUrl;
+  }
+  
+  function showError(error) {
+      switch(error.code) {
+          case error.PERMISSION_DENIED:
+              alert("L'utilisateur a refusé la demande de géolocalisation.");
+              break;
+          case error.POSITION_UNAVAILABLE:
+              alert("Les informations de localisation ne sont pas disponibles.");
+              break;
+          case error.TIMEOUT:
+              alert("La demande de localisation a expiré.");
+              break;
+          case error.UNKNOWN_ERROR:
+              alert("Une erreur inconnue s'est produite.");
+              break;
+      }
+  }
+</script>
+
+<div class="container">
+ <div class="description">
+     <p>
+         <strong>Alger</strong>, surnommée "Alger la Blanche", est la capitale de l'Algérie et la plus grande ville du pays. <br>
+         Située sur la côte méditerranéenne, elle s'étend sur une superficie de 363 km² et compte plus de 3 millions d'habitants. <br>
+         <br>
+         La ville est divisée en plusieurs quartiers distincts : <br>
+         - La Casbah (vieille ville historique classée au patrimoine mondial de l'UNESCO) <br>
+         - Le quartier moderne d'Alger Centre <br>
+         - Les quartiers résidentiels comme Hydra et El Biar <br>
+         - Les banlieues comme Bab Ezzouar et Rouïba <br>
+         Alger est un important centre économique, politique et culturel du Maghreb. La ville abrite de nombreux monuments historiques, musées, universités et institutions gouvernementales. Son climat méditerranéen offre des hivers doux et des étés chauds et secs.
+     </p>
+ </div>
+ <div id="map"></div>
+</div>
+
+<!-- Inclure Leaflet.js -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Script pour afficher la carte -->
+<script>
+ var map = L.map('map').setView([36.7538, 3.0588], 12); // Coordonnées d'Alger
+
+ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+     attribution: '&copy; OpenStreetMap contributors'
+ }).addTo(map);
+
+ L.marker([36.7538, 3.0588]).addTo(map)
+     .bindPopup('Alger, Algérie')
+     .openPopup();
+</script>
+
+<section class="carnets">
+<h2>Sélection de carnets de voyage et expériences à Alger</h2>
+<div class="carnets-container">
+    <!-- Carnet 0 -->
+    <div class="carnet">
+        <div class="carnet-img-placeholder">
+            <button class="prev" onclick="afficherImagePrecedente(0)">&#10094;</button>
+            <img src="image/casbah1.jpg" alt="Casbah d'Alger">
+            <img src="image/casbah2.jpg" alt="Casbah d'Alger">
+            <img src="image/casbah3.jpg" alt="Casbah d'Alger">
+            <img src="image/casbah4.jpg" alt="Casbah d'Alger">
+            <button class="next" onclick="afficherImageSuivante(0)">&#10095;</button>
+        </div>
+        <div class="carnet-info">
+            <div class="badges-container">
+            <span class="badge">Alger</span>
+            <span class="badge">Casbah</span>
+           </div>
+            <h3>Découverte de la Casbah</h3>
+            <p class="author">par <span>Karim B.</span></p>
+            <button onclick="ouvrirFenetre()" class="bouton">ouvrir le carnet</button>
+        </div>
+    </div>
+
+    <!-- Carnet 1 -->
+    <div class="carnet">
+        <div class="carnet-img-placeholder">
+            <button class="prev" onclick="afficherImagePrecedente(1)">&#10094;</button>
+            <img src="image/alger_centre.jpg" alt="Alger Centre">
+            <img src="image/notre_dame_afrique.jpg" alt="Notre Dame d'Afrique">
+            <button class="next" onclick="afficherImageSuivante(1)">&#10095;</button>
+        </div>
+        <div class="carnet-info">
+            <div class="badges-container">
+            <span class="badge">Alger</span>
+            <span class="badge">Monuments</span>
+          </div>
+            <h3>Week-end à Alger</h3>
+            <p class="author">par <span>Leïla M.</span></p>
+            <button onclick="ouvrirFenetre()" class="bouton">ouvrir le carnet</button>
+        </div>
+    </div>
+
+    <!-- Carnet 2 -->
+    <div class="carnet">
+        <div class="carnet-img-placeholder">
+            <button class="prev" onclick="afficherImagePrecedente(2)">&#10094;</button>
+            <img src="image/jardin_essaai.jpg" alt="Jardin d'Essai">
+            <img src="image/memorial_martyr.jpg" alt="Mémorial du Martyr">
+            <img src="image/musee_bardo.jpg" alt="Musée du Bardo">
+            <button class="next" onclick="afficherImageSuivante(2)">&#10095;</button>
+        </div>
+        <div class="carnet-info">
+            <div class="badges-container">
+            <span class="badge">Alger</span>
+            <span class="badge">Culture</span>
+        </div>
+            <h3>Les trésors culturels d'Alger</h3>
+            <p class="author">par <span>Yasmine K.</span></p>
+            <button onclick="ouvrirFenetre()" class="bouton">ouvrir le carnet</button>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- carte experience -->
+<div class="experience-card">
+<div class="experience-info">
+    <h2>Balade dans la Casbah</h2>
+    <p class="author">par <span class="author-name">Karim B.</span></p>
+    <p class="location"><strong>Lieu :</strong> Alger</p>
+    <p class="place"><strong>Endroit :</strong> Casbah</p>
+    <p class="transport"><strong>Moyen de transport :</strong> À pied</p>
+    <p class="description_carte">
+        "La Casbah d'Alger est un dédale de ruelles étroites et d'escaliers, un véritable voyage dans le temps. Les maisons blanches aux volets bleus, les mosquées anciennes et l'atmosphère unique en font un lieu incontournable."
+    </p>
+    <button class="btn"> <a href="profil.html">Accéder au profil </a></button>
+</div>
+<div class="experience-gallery">
+    <div class="image-slider">
+        <button class="prev" onclick="prevImage()">&#10094;</button>
+        <img src="image/casbah1.jpg" alt="Casbah d'Alger" onclick="openLightbox(0)">
+        <img src="image/casbah2.jpg" alt="Casbah d'Alger" onclick="openLightbox(1)">
+        <img src="image/casbah3.jpg" alt="Casbah d'Alger" onclick="openLightbox(2)">
+        <button class="next" onclick="nextImage()">&#10095;</button>
+    </div>
+</div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+<span class="close" onclick="closeLightbox()">&times;</span>
+<button class="lightbox-prev" onclick="lightboxPrev()">&#10094;</button>
+<img id="lightbox-img" src="">
+<button class="lightbox-next" onclick="lightboxNext()">&#10095;</button>
+</div>
+
+<!-- java pour la carte  -->
+<script>
+let index = 0;
+let images = document.querySelectorAll(".image-slider img");
+
+function showImage(n) {
+    if (n >= images.length) index = 0;
+    if (n < 0) index = images.length - 1;
+    images.forEach(img => img.style.display = "none");
+    images[index].style.display = "block";
+}
+
+function nextImage() { showImage(++index); }
+function prevImage() { showImage(--index); }
+document.addEventListener("DOMContentLoaded", () => showImage(index));
+
+// Lightbox
+function openLightbox(n) {
+    lightboxIndex = n;
+    document.getElementById("lightbox-img").src = images[n].src;
+    document.getElementById("lightbox").style.display = "flex";
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+}
+
+function lightboxNext() {
+    lightboxIndex = (lightboxIndex + 1) % images.length;
+    document.getElementById("lightbox-img").src = images[lightboxIndex].src;
+}
+
+function lightboxPrev() {
+    lightboxIndex = (lightboxIndex - 1 + images.length) % images.length;
+    document.getElementById("lightbox-img").src = images[lightboxIndex].src;
+}
+
+// Fermer la lightbox avec Échap et naviguer avec les flèches du clavier
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        closeLightbox();
+    } else if (event.key === "ArrowRight") {
+        lightboxNext();
+    } else if (event.key === "ArrowLeft") {
+        lightboxPrev();
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+let galerieContainers = document.querySelectorAll(".carnet-img-placeholder");
+
+galerieContainers.forEach(galerie => {
+    let imagesGalerie = galerie.querySelectorAll("img");
+    let indexActuel = 0;
+
+    // Afficher la première image par défaut
+    imagesGalerie[indexActuel].classList.add("active");
+
+    // Fonction pour afficher l'image suivante
+    galerie.querySelector(".next").addEventListener("click", function () {
+        imagesGalerie[indexActuel].classList.remove("active");
+        indexActuel = (indexActuel + 1) % imagesGalerie.length; // Passer à l'image suivante (boucle)
+        imagesGalerie[indexActuel].classList.add("active");
+    });
+
+    // Fonction pour afficher l'image précédente
+    galerie.querySelector(".prev").addEventListener("click", function () {
+        imagesGalerie[indexActuel].classList.remove("active");
+        indexActuel = (indexActuel - 1 + imagesGalerie.length) % imagesGalerie.length; // Revenir à l'image précédente (boucle)
+        imagesGalerie[indexActuel].classList.add("active");
+    });
+});
+});
+
+</script>
+
+<!-- java pour carnets  -->
+<script>
+    let indexActuels = [0, 0, 0]; // Un index pour chaque carnet
+ 
+ function afficherImage(carnetIndex, nouvelleIndex) {
+     const carnet = document.querySelectorAll('.carnet')[carnetIndex];
+     const images = carnet.querySelectorAll('img');
+ 
+     // Gérer les bornes
+     if (nouvelleIndex < 0) {
+         nouvelleIndex = images.length - 1;
+     } else if (nouvelleIndex >= images.length) {
+         nouvelleIndex = 0;
+     }
+ 
+     // Cacher toutes les images
+     images.forEach(img => img.style.display = 'none');
+ 
+     // Afficher la bonne image
+     images[nouvelleIndex].style.display = 'block';
+ 
+     // Mettre à jour l'index
+     indexActuels[carnetIndex] = nouvelleIndex;
+ }
+ 
+ function afficherImagePrecedente(carnetIndex) {
+     afficherImage(carnetIndex, indexActuels[carnetIndex] - 1);
+ }
+ 
+ function afficherImageSuivante(carnetIndex) {
+     afficherImage(carnetIndex, indexActuels[carnetIndex] + 1);
+ }
+ 
+ // Initialisation : afficher uniquement la première image de chaque carnet
+ window.onload = () => {
+     document.querySelectorAll('.carnet').forEach((carnet, index) => {
+         const images = carnet.querySelectorAll('img');
+         images.forEach((img, i) => img.style.display = i === 0 ? 'block' : 'none');
+     });
+ };
+ 
+     </script>
+     
+     
+ 
+ 
+ 
+  <!--- la fenetre modale---> 
+ 
+ 
+     <div id="fenetreExperience" class="fenetre-experiences">
+       <span class="fermer-fenetre" onclick="fermerFenetre()">&times;</span>
+       <div class="contenu-fenetre">
+         <div id="conteneur-experiences">
+           <div class="profil-utilisateur">
+             <img src="image/photo_profil.jpg" alt="Photo de profil" class="photo-profil" />
+             <div>
+               <p class="titre-carnet">Découverte d'Alger</p>
+               <p class="infos-carnet">par <strong>Karim B.</strong> | Durée : 3 jours | Début : 10 Avril 2025</p>
+               <p class="description1">"Un week-end inoubliable à la découverte des trésors d'Alger, entre histoire, culture et gastronomie."</p>
+             </div>
+           </div>
+   
+           <hr />
+   
+           <div class="carte-experience">
+             <div class="infos-experience">
+               <h2>Balade dans la Casbah</h2>
+               <p class="date"><strong>Date :</strong> 10 Avril 2025</p>
+               <p class="wilaya"><strong>Wilaya :</strong> Alger</p>
+               <p class="lieu"><strong>Lieu :</strong> Casbah</p>
+               <p class="transport"><strong>Moyen de transport :</strong> À pied</p>
+               <p class="description_carte">"La Casbah d'Alger est un dédale de ruelles étroites et d'escaliers, un véritable voyage dans le temps. Les maisons blanches aux volets bleus, les mosquées anciennes et l'atmosphère unique en font un lieu incontournable."</p>
+             </div>
+             <div class="galerie-experience">
+               <div class="diapo-images">
+                 <button class="precedent">&#10094;</button>
+                 <img src="image/casbah1.jpg" class="active" onclick="ouvrirLightbox(0, event)" />
+                 <img src="image/casbah2.jpg" onclick="ouvrirLightbox(0, event)" />
+                 <button class="suivant">&#10095;</button>
+               </div>
+             </div>
+           </div>
+   
+           <hr />
+   
+           <div class="carte-experience">
+             <div class="infos-experience">
+               <h2>Visite de Notre Dame d'Afrique</h2>
+               <p class="date"><strong>Date :</strong> 11 Avril 2025</p>
+               <p class="wilaya"><strong>Wilaya :</strong> Alger</p>
+               <p class="lieu"><strong>Lieu :</strong> Notre Dame d'Afrique</p>
+               <p class="transport"><strong>Moyen de transport :</strong> Taxi</p>
+               <p class="description_carte">"La basilique Notre Dame d'Afrique offre une vue imprenable sur la baie d'Alger. L'architecture néo-byzantine et l'atmosphère spirituelle en font un lieu unique."</p>
+             </div>
+             <div class="galerie-experience">
+               <div class="diapo-images">
+                 <button class="precedent">&#10094;</button>
+                 <img src="image/notre_dame_afrique.jpg" class="active" onclick="ouvrirLightbox(1, event)" />
+                 <img src="image/notre_dame_vue.jpg" onclick="ouvrirLightbox(1, event)" />
+                 <button class="suivant">&#10095;</button>
+               </div>
+             </div>
+           </div>
+           <button class="btn"> <a href="profil.html">Accéder au profil </a></button>
+           
+         </div>
+       </div>
+     </div>
+   
+     <!-- Lightbox -->
+     <div id="lightbox">
+       <span class="fermer-lightbox" onclick="fermerLightbox()">&times;</span>
+       <button class="nav-lightbox precedent-lightbox" onclick="imagePrecedente()">&#10094;</button>
+       <img id="image-lightbox" />
+       <button class="nav-lightbox suivant-lightbox" onclick="imageSuivante()">&#10095;</button>
+     </div>
+   
+     <script>
+         // Ouverture et fermeture de la fenêtre modale
+         function ouvrirFenetre() {
+           document.getElementById('fenetreExperience').style.display = 'flex';
+         }
+       
+         function fermerFenetre() {
+           document.getElementById('fenetreExperience').style.display = 'none';
+         }
+       
+         // Carrousel d'images dans les cartes
+         document.querySelectorAll('.diapo-images').forEach((diapo) => {
+           let index = 0;
+           const images = diapo.querySelectorAll('img');
+           const precedent = diapo.querySelector('.precedent');
+           const suivant = diapo.querySelector('.suivant');
+       
+           function afficherImage(i) {
+             images.forEach((img, idx) => {
+               img.classList.toggle('active', idx === i);
+             });
+           }
+       
+           precedent.addEventListener('click', () => {
+             index = (index - 1 + images.length) % images.length;
+             afficherImage(index);
+           });
+       
+           suivant.addEventListener('click', () => {
+             index = (index + 1) % images.length;
+             afficherImage(index);
+           });
+         });
+       
+         // Lightbox
+         let imagesLightbox = [];
+         let indexLightbox = 0;
+       
+         function ouvrirLightbox(index, event) {
+   const diapoActif = event.target.closest('.diapo-images');
+   imagesLightbox = Array.from(diapoActif.querySelectorAll('img'));
+   indexLightbox = index;
+ 
+   document.getElementById('image-lightbox').src = imagesLightbox[index].src;
+   document.getElementById('lightbox').style.display = 'flex';
+ }
+       
+         function fermerLightbox() {
+           document.getElementById('lightbox').style.display = 'none';
+         }
+       
+         function imageSuivante() {
+           indexLightbox = (indexLightbox + 1) % imagesLightbox.length;
+           document.getElementById('image-lightbox').src = imagesLightbox[indexLightbox].src;
+         }
+       
+         function imagePrecedente() {
+           indexLightbox = (indexLightbox - 1 + imagesLightbox.length) % imagesLightbox.length;
+           document.getElementById('image-lightbox').src = imagesLightbox[indexLightbox].src;
+         }
+       </script>
+ 
+ 
+     
+     
+     
+     
+     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+      <footer class="footer">
+        <div class="footer-container">
+          <!-- Contact -->
+          <div class="footer-column">
+              <h3>Contactez-nous</h3>
+              <div class="footer-social">
+                <a href="https://www.facebook.com/">  <i class="fa-brands fa-facebook-f" style="color:  darkblue;"></i></a>
+                <a href="https://www.instagram.com/">  <i class="fa-brands fa-instagram"  style="color:  darkblue;"></i></a>
+                <a href="https://www.gmail.com/"> <i class="fa-solid fa-envelope"  style="color:  darkblue;"></i></a>
+          </div>
+          </div>
+  
+  
+        
+            <div class="footer-section">
+              <h2>Liens utiles</h2>
+              <ul>
+                <li><a href="#">Trouver votre localisation</a></li>
+                <li><a href="offre.html">Offre</a></li>
+              </ul>
+            </div>
+        
+            <div class="footer-section">
+              <h2>À propos</h2>
+              <p>DiscoverDZ vous permet de raconter vos aventures et vous aide à les partager avec vos amis et d'autres passionnés de voyages.</p>
+            </div>
+        
+            <div class="footer-section">
+              <h2>Wilayas à découvrir</h2>
+              <ul>
+                <li><a href="alger.html">Alger</a></li>
+                <li><a href="annaba.html">Annaba</a></li>
+                <li><a href="constantine.html">Constantine</a></li>
+                <li><a href="mostaganem.html">Mostaganem</a></li>
+                <li><a href="#">...</a></li>
+    
+              </ul>
+            </div>
+          </div>
+        </footer>
+        <script src="icones/all.js"></script>
+        <script src="script1.js"></script>
+    
+      </body>
+      </html>

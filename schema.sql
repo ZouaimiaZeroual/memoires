@@ -1,0 +1,29 @@
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS carnets (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    user_id INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE IF NOT EXISTS carnet_images (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    carnet_id INT,
+    image_path VARCHAR(255) NOT NULL,
+    FOREIGN KEY (carnet_id) REFERENCES carnets(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS carnet_locations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    carnet_id INT,
+    location VARCHAR(100) NOT NULL,
+    FOREIGN KEY (carnet_id) REFERENCES carnets(id) ON DELETE CASCADE
+);

@@ -1,0 +1,565 @@
+
+/* --- Styles Généraux --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+/* --- ------------------------------------------------------------------------------- --- */
+
+/* --- HEADER --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 10px 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mydiv {
+  display: flex;
+  align-items: center;
+}
+
+.mydiv img {
+  height: 50px;
+  margin-right: 15px;
+}
+
+.mydiv h1 {
+  font-size: 24px;
+  color: darkblue;
+}
+
+.navv .navbar {
+  list-style: none;
+  display: flex;
+}
+
+.navbar li {
+  margin-right: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: darkblue;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #007BFF;
+}
+
+/* Icônes du header */
+.myi {
+  display: flex;
+  align-items: center;
+}
+
+.icon-btn {
+  font-size: 20px;
+  color: darkblue;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  color: #007BFF;
+}
+
+  /* --- ------------------------------------------------------------------------------- --- */
+
+.menu-item {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: darkblue;
+  font-size: 18px;
+ 
+  display: block;
+}
+
+/* ========================= */
+/*       SOUS-MENU          */
+/* ========================= */
+
+/* Masquer la sous-liste par défaut */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 600px;
+  flex-direction: row;
+  gap: 20px;
+  z-index: 1000;
+}
+
+/* Organisation des colonnes */
+.submenu-column {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+}
+
+/* Titres des sections */
+.submenu-column li strong {
+  display: block;
+  font-size: 16px;
+  color: #0073e6;
+  margin-bottom: 5px;
+}
+
+/* Liens du sous-menu */
+.submenu-column li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.submenu-column li a:hover {
+  color: #0073e6;
+}
+
+/* ========================= */
+/*  AFFICHAGE AU SURVOL      */
+/* ========================= */
+
+/* Afficher la sous-liste au survol */
+.menu-item:hover .submenu {
+  display: flex;
+}
+
+
+
+/* --- ------------------------------------------------------------------------------- --- */
+.div1 {
+  display: flex;
+  justify-content: space-between;
+  background:darkblue;
+  padding: 10px 20px;
+}
+
+.nav1, .nav2 {
+  display: flex;
+}
+
+.nav1 ul, .nav2 ul {
+  list-style: none;
+  display: flex;
+}
+
+.nav1 li, .nav2 li {
+  margin-right: 20px;
+}
+
+.nav1 a, .nav2 a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav1 a:hover, .nav2 a:hover {
+  text-decoration: underline;
+}
+
+  .posi button{
+    background-color: white;
+    width: 300px;
+    height: 30px;
+    border: 3px solid transparent;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    font-size: 1em;
+    color: red;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  /* Style pour le bouton Admin */
+.admin-btn {
+  background-color: #d9534f; /* Rouge pour le distinguer */
+  color: white !important;
+  padding: 8px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.admin-btn:hover {
+  background-color: #c9302c;
+  text-decoration: none;
+}
+
+/* Pour les petits écrans */
+@media (max-width: 768px) {
+  .admin-btn {
+      padding: 6px 10px;
+      font-size: 14px;
+  }
+}
+.admin-btn i {
+  margin-right: 5px;
+}
+ 
+
+/* --- SLIDER --- */
+
+
+/* --- TEXTE SUR LE SLIDER --- */
+.img{
+  background-image: url(image/nature1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height:500px;
+  position: relative;
+  box-shadow: 20px 20px 10px gray;
+}
+
+.sousimg {
+  max-width: 600px;
+  margin-left:20px ;
+  position: absolute;
+  }
+  
+  
+  .sousimg h1 {
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 90px;
+  color: rgb(2, 2, 55);
+  }
+  .sousimg p {
+  font-size: 30px;
+  margin-top: 20px;
+  color: rgb(5, 39, 114);
+  }
+
+/* --- Section Présentation --- */
+.div2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 40px 20px;
+}
+
+.carte {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 50%;
+}
+
+.div2 img {
+  width: 250px;
+  border-radius: 10px;
+}
+.acc{
+  width:640px;
+  height: 380px;
+}
+/* --- Section Fonctionnalités --- */
+.container {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+.container h2{
+  color: darkblue;
+}
+.item {
+  width: 30%;
+  background: #f7f8f9;
+  padding: 20px;
+
+}
+
+
+.icon {
+  font-size: 35px;
+  margin-bottom: 10px;
+  margin: 0px 6px;
+  border-radius: 50px;
+  color:darkblue;
+
+}
+
+/* --- ---------------------------- */
+.bloc{
+    display: flex;
+}
+.containerleft{
+  margin-top: 50px;
+  width: 50%;
+}
+.containerleft h1{
+  font-size:x-large;
+  margin-left: 80px;
+  color:darkblue;
+  margin-top: -25px;
+
+
+}
+.containerleft img{
+  margin-left: 50px;
+  margin-top: 30px;
+ 
+}
+.spin{
+  margin-left: 50px;
+  font-size: large;
+}
+.cont{
+  margin-left: 80px;
+  margin-top: 20px;
+}
+.cont1{
+  margin-left: 50px;
+  margin-top: 20px;
+  font-size: large;
+}
+b{
+  color: darkblue;
+}
+
+/* --- ---------------------------- */
+.containerright{
+    margin-top: 50px;
+    width: 50%;
+  }
+  .containerright h1{
+    font-size:x-large;
+    margin-left: 80px;
+    color:darkblue;
+    margin-top: -25px;
+  }
+  .containerright img{
+    margin-left: 50px;
+    margin-top: 30px;
+    width: 400px;
+  }
+  .containerright h3{
+    color: darkblue;
+    margin-left: 200px;
+  }
+  .para{
+    margin-top: 30px;
+    margin-left: 200px;
+  }
+  select{
+    width: 200px;
+    height: 50px;
+    font-size: large;
+  }
+  option{
+    text-align: center;
+  }
+  input{
+    width: 100px;
+    height: 50px;
+    color: white;
+   background-color: darkblue;
+   font-size: large;
+  }
+
+  .butn{
+    width: 40%;
+  margin-left: 180px;
+  margin-top: 20px;
+  background-color:darkblue;
+  padding: 5px;
+  color: white;
+  border-radius: 15px;
+  font-size: 1em;
+  border-color:rgb(23, 20, 105) ;
+  box-shadow: 2px 2px 2px rgb(95, 92, 92);
+  }
+
+
+/* --- ---------------------------- */
+.villes {
+  display: flex;
+  margin-left: -20px;
+  margin-bottom: 50px;
+}
+
+.ville h1 {
+  margin-left: 550px;
+  margin-top: 30px;
+  color: darkblue;
+  font-size: xx-large;
+}
+
+.ville span {
+  margin-left: 530px;
+  margin-top: 5px;
+}
+
+
+.image-container {
+  overflow: hidden; 
+  border-radius: 10px;
+  position: relative;
+  display: inline-block; 
+}
+
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+.image-container:hover img {
+  transform: scale(1.1);
+}
+
+.alger {
+  margin-left: 200px;
+  width: 500px;
+  height: 480px;
+}
+
+.annaba {
+  display: flex;
+}
+
+.annaba .image-container {
+  width: 300px;
+  height: 250px;
+  margin-left: 10px;
+}
+
+.oran {
+  width: 610px;
+  height: 222px;
+  margin-left: 10px;
+  margin-top: 2px;
+}
+
+.image-container .city-info {
+  position: absolute;
+  bottom: -30px;  
+  right:  200px; 
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: bottom 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligner le texte à gauche */
+}
+
+#or{
+  right:  500px;
+}
+#alg{
+  right: 400px; 
+}
+
+.city-info .establishments {
+  font-size: 14px;
+  font-weight: normal;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.image-container:hover .city-info {
+  bottom: 50px;
+}
+
+.image-container:hover .city-info .establishments {
+  opacity: 1;
+}
+
+
+
+/* --- FOOTER --- */
+
+.footer {
+    background-color:darkblue;
+    color: white;
+    padding: 30px 20px;
+    margin-top:auto;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .footer-section {
+    width: 22%;
+    min-width: 200px;
+  }
+  
+  .footer-section h2 {
+    color:white
+  }
+  .footer-social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -10px;
+  }
+  .footer-social a {
+    margin: 0px 6px;
+    border-radius: 50px;
+    color: #212121;
+    background-color: white;
+    border:1px solid rgba(0,0,0,0.1);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-top: 10px;
+    margin-bottom: 8px;
+  }
+  
+  .footer-section a {
+    color: white;
+    text-decoration: none;
+  }
+  .copyright{
+    margin-left: 530px;
+  }
